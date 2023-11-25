@@ -1,10 +1,11 @@
 const scanner = new Html5Qrcode("qr-reader");
 
+let studentData;
 const qrCodeDiv = document.getElementById('qr-reader');
 const infoBox = document.getElementById('qr-reader-info');
 function onScanSuccess(decodedText, decodedResult) {
     // Assuming the QR code contains a JSON string of student data
-    const studentData = JSON.parse(decodedText);
+    studentData = JSON.parse(decodedText);
     console.log(studentData);
     qrCodeDiv.classList.add('hidden');
     displayStudentData(studentData);
@@ -28,20 +29,28 @@ function displayStudentData(data) {
     const infoDiv = document.getElementById('student-info');
     
     infoBox.classList.remove('hidden');
-    infoDiv.innerHTML = `<p><strong>Name:</strong> ${data.Name}</p>
+    infoDiv.innerHTML = `<p><strong>Name:</strong> ${data.name}</p>
                          <p><strong>Roll Number:</strong> ${data.roll_no}</p>`;
 }
 
 document.getElementById('approve-entry').addEventListener('click', function() {
     // Logic to approve entry/exit
-    console.log('Entry/Exit Approved');
+    if (currentStudentData) {
+        console.log('Entry/Exit Approved', currentStudentData);
+        // Send currentStudentData to your backend
+        updateStatus(studentData, 'Approved');
+    }
     // Here you would typically send a request to your backend
     resumeScanner();
 });
 
 document.getElementById('deny-entry').addEventListener('click', function() {
     // Logic to deny entry/exit
-    console.log('Entry/Exit Denied');
+    if (currentStudentData) {
+        console.log('Entry/Exit Declined', currentStudentData);
+        // Send currentStudentData to your backend
+        updateStatus(studentData, 'Decline');
+    }
     // Similar to approve, send a request to your backend
     
     resumeScanner();
