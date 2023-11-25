@@ -8,14 +8,22 @@
     <script src="https://unpkg.com/html5-qrcode"></script>
 </head>
 <body>
+    <!-- write a navbar html code -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="time"></div>
+        </nav>
+    </header>
     <div id="container">
-        <div id="qr-reader" style="width:300px; height:300px;"></div>
-        <div id="student-info">
-            <!-- Student info will be displayed here after scanning QR code -->
-        </div>
-        <div id="actions">
-            <button id="approve-entry">Approve Entry/Exit</button>
-            <button id="deny-entry">Deny Entry/Exit</button>
+        <div id="qr-reader" style="width:400px; height:300px;" width="400px"></div>
+        <div id="qr-reader-info" class="hidden">
+            <div id="student-info">
+                <!-- Student info will be displayed here after scanning QR code -->
+            </div>
+            <div id="actions">
+                <button id="approve-entry">Approve Entry/Exit</button>
+                <button id="deny-entry">Deny Entry/Exit</button>
+            </div>
         </div>
     </div>
 

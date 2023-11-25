@@ -10,7 +10,7 @@ function createWindow() {
     });
 
     // Load your starting HTML file
-    win.loadFile('views/guard.html');
+    win.loadFile('views/guard/guard.html');
 }
 
 app.whenReady().then(createWindow);
