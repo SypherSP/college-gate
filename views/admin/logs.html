@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Student Entry/Exit Log</title>
+  </head>
+  <body>
+    <h2>Student Entry/Exit Log</h2>
+
+    <div class="filter-input">
+      <label>Date: <input type="date" id="filter-date" /></label>
+      <label>Name: <input type="text" id="filter-name" /></label>
+      <label>Roll Number: <input type="text" id="filter-roll" /></label>
+      <label
+        >Entry/Exit:
+        <select id="filter-entry-exit">
+          <option value="">All</option>
+          <option value="Entry">Entry</option>
+          <option value="Exit">Exit</option>
+        </select>
+      </label>
+      <label
+        >Status:
+        <select id="filter-status">
+          <option value="">All</option>
+          <option value="Approved">Approved</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </label>
+      <button onclick="applyFilters()">Filter</button>
+    </div>
+
+    <div class="scrollable-table">
+      <table id="log-table">
+        <!-- Table Headings -->
+        <thead>
+          <tr>
+            <th onclick="sortTableByColumn(0)">Serial Number</th>
+            <th onclick="sortTableByColumn(1)">Name</th>
+            <th onclick="sortTableByColumn(2)">Roll Number</th>
+            <th>Mobile Number</th>
+            <!-- No sorting for mobile number -->
+            <th onclick="sortTableByColumn(4)">Time</th>
+            <th>Entry/Exit</th>
+            <!-- No sorting for Entry/Exit -->
+            <th>Status</th>
+            <!-- No sorting for Status -->
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- Rows will be added dynamically here -->
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      </script>
+  </body>
+</html>

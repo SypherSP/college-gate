@@ -1,6 +1,6 @@
 const scanner = new Html5Qrcode("qr-reader");
 
-let studentData;
+let studentData = null;
 const qrCodeDiv = document.getElementById('qr-reader');
 const infoBox = document.getElementById('qr-reader-info');
 function onScanSuccess(decodedText, decodedResult) {
@@ -49,7 +49,7 @@ document.getElementById('deny-entry').addEventListener('click', function() {
     if (currentStudentData) {
         console.log('Entry/Exit Declined', currentStudentData);
         // Send currentStudentData to your backend
-        updateStatus(studentData, 'Decline');
+        updateStatus(studentData, 'Declined');
     }
     // Similar to approve, send a request to your backend
     
