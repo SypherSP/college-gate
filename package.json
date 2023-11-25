@@ -4,7 +4,8 @@
   "description": "- Simplifying record keeping of incoming and outgoing people in our college. - Implementing hassle free and reliable entry and exit using a QR code as a pass. - Enable searching, monitoring and downloading data for college administrators.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/SypherSP/college-gate#readme",
   "dependencies": {
-    "electron": "^27.1.2"
+    "electron": "^27.1.2",
+    "qrcode": "^1.5.3"
   }
 }

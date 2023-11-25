@@ -3,7 +3,30 @@ body {
     text-align: center;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
+    /* padding: 20px; */
+}
+
+#header{
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    justify-content: right;
+    align-items: center;
+    padding-inline: 20px;
+    margin-bottom: 50px;
+    position: relative;
+    text-align: center;
+    background-color:cadetblue;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: right;
+}
+.time{
+    align-items: right;
 }
 
 #container {
@@ -41,4 +64,9 @@ body {
 
 #actions button:hover {
     background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
 }
