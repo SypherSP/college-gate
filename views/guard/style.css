@@ -4,6 +4,11 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     /* padding: 20px; */
+    background: url("./Logo_IIITL.png");
+    background-repeat: space;
+    background-size: 7rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-blend-mode: lighten;
 }
 
 #header{
@@ -22,11 +27,32 @@ body {
 .navbar{
     display: flex;
     flex-direction: row;
-    justify-content: right;
-    align-items: right;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
+
+.navbar-links{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-link{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.btn-link-2{
+    margin-right: 6px;
+}
+
+
 .time{
     align-items: right;
+    font-size: small;
 }
 
 #container {

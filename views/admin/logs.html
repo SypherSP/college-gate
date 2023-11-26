@@ -7,12 +7,24 @@
     <title>Student Entry/Exit Log</title>
   </head>
   <body>
-    <h2>Student Entry/Exit Log</h2>
+    <header id="header">
+      <nav class="navbar">
+          <div class="logo">IIITL</div>
+          <div class="navbar-links">
+              <button class="btn-link">Scan</button>
+              <button class="btn-link btn-link-2">Logs</button>
+              <div class="time"></div>
+          </div>
+      </nav>
+  </header>
+  <div class="container">
+
+    <h2 class="heading">Student Entry/Exit Log</h2>
 
     <div class="filter-input">
       <label>Date: <input type="date" id="filter-date" /></label>
-      <label>Name: <input type="text" id="filter-name" /></label>
-      <label>Roll Number: <input type="text" id="filter-roll" /></label>
+      <label>Name: <input type="text" id="filter-name"  placeholder="Enter Name"/></label>
+      <label>Roll Number: <input type="text" placeholder="Enter Roll Number" id="filter-roll" /></label>
       <label
         >Entry/Exit:
         <select id="filter-entry-exit">
@@ -55,8 +67,8 @@
         </tbody>
       </table>
     </div>
+  </div>
 
-    <script>
-      </script>
+    <script src="script.js"></script>
   </body>
 </html>

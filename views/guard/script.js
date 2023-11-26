@@ -38,7 +38,7 @@ document.getElementById('approve-entry').addEventListener('click', function() {
     if (currentStudentData) {
         console.log('Entry/Exit Approved', currentStudentData);
         // Send currentStudentData to your backend
-        updateStatus(studentData, 'Approved');
+        // updateStatus(studentData, 'Approved');
     }
     // Here you would typically send a request to your backend
     resumeScanner();
@@ -49,7 +49,7 @@ document.getElementById('deny-entry').addEventListener('click', function() {
     if (currentStudentData) {
         console.log('Entry/Exit Declined', currentStudentData);
         // Send currentStudentData to your backend
-        updateStatus(studentData, 'Declined');
+        // updateStatus(studentData, 'Rejected');
     }
     // Similar to approve, send a request to your backend
     
@@ -59,8 +59,9 @@ document.getElementById('deny-entry').addEventListener('click', function() {
 
 function updateTime() {
     const now = new Date();
+    const dateString = now.toLocaleDateString();
     const timeString = now.toLocaleTimeString(); // Adjust format as needed
-    document.querySelector('.time').textContent = timeString;
+    document.querySelector('.time').textContent = dateString + " " + timeString;
 }
 
 // Update time every second

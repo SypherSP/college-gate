@@ -1,14 +1,189 @@
+const data = [
+  {
+    "serial": 1,
+    "name": "Bob Brown",
+    "roll": "LCS2020101",
+    "mobile": "123456812",
+    "time": "10:44 AM",
+    "entryExit": "Exit",
+    "status": "Approved"
+  },
+  {
+    "serial": 2,
+    "name": "John Doe",
+    "roll": "LCS2020102",
+    "mobile": "123458303",
+    "time": "03:41 PM",
+    "entryExit": "Exit",
+    "status": "Approved"
+  },
+  {
+    "serial": 3,
+    "name": "John Doe",
+    "roll": "LCS2020103",
+    "mobile": "123456090",
+    "time": "11:41 AM",
+    "entryExit": "Exit",
+    "status": "Rejected"
+  },
+  {
+    "serial": 4,
+    "name": "Jane Smith",
+    "roll": "LCS2020104",
+    "mobile": "123455814",
+    "time": "06:08 AM",
+    "entryExit": "Entry",
+    "status": "Approved"
+  },
+  {
+    "serial": 5,
+    "name": "Emma Davis",
+    "roll": "LCS2020105",
+    "mobile": "123459686",
+    "time": "05:18 PM",
+    "entryExit": "Entry",
+    "status": "Rejected"
+  },
+  {
+    "serial": 6,
+    "name": "Alice Johnson",
+    "roll": "LCS2020106",
+    "mobile": "123451857",
+    "time": "01:38 PM",
+    "entryExit": "Entry",
+    "status": "Approved"
+  },
+  {
+    "serial": 7,
+    "name": "Emma Davis",
+    "roll": "LCS2020107",
+    "mobile": "123459805",
+    "time": "01:39 AM",
+    "entryExit": "Entry",
+    "status": "Approved"
+  },
+  {
+    "serial": 8,
+    "name": "Alice Johnson",
+    "roll": "LCS2020108",
+    "mobile": "123451401",
+    "time": "05:04 AM",
+    "entryExit": "Entry",
+    "status": "Rejected"
+  },
+  {
+    "serial": 9,
+    "name": "Alice Johnson",
+    "roll": "LCS2020109",
+    "mobile": "123451960",
+    "time": "10:38 PM",
+    "entryExit": "Exit",
+    "status": "Approved"
+  },
+  {
+    "serial": 10,
+    "name": "Bob Brown",
+    "roll": "LCS20201010",
+    "mobile": "123457715",
+    "time": "07:03 PM",
+    "entryExit": "Exit",
+    "status": "Rejected"
+  },
+  {
+    "serial": 11,
+    "name": "Bob Brown",
+    "roll": "LCS20201011",
+    "mobile": "123459801",
+    "time": "04:23 AM",
+    "entryExit": "Exit",
+    "status": "Approved"
+  },
+  {
+    "serial": 12,
+    "name": "Emma Davis",
+    "roll": "LCS20201012",
+    "mobile": "123452152",
+    "time": "02:41 AM",
+    "entryExit": "Exit",
+    "status": "Approved"
+  },
+  {
+    "serial": 13,
+    "name": "Emma Davis",
+    "roll": "LCS20201013",
+    "mobile": "123458187",
+    "time": "03:06 AM",
+    "entryExit": "Exit",
+    "status": "Approved"
+  },
+  {
+    "serial": 14,
+    "name": "Jane Smith",
+    "roll": "LCS20201014",
+    "mobile": "123453841",
+    "time": "08:29 AM",
+    "entryExit": "Entry",
+    "status": "Approved"
+  },
+  {
+    "serial": 15,
+    "name": "Emma Davis",
+    "roll": "LCS20201015",
+    "mobile": "123454242",
+    "time": "02:24 AM",
+    "entryExit": "Entry",
+    "status": "Approved"
+  },
+  {
+    "serial": 16,
+    "name": "Emma Davis",
+    "roll": "LCS20201016",
+    "mobile": "123454368",
+    "time": "09:33 AM",
+    "entryExit": "Entry",
+    "status": "Approved"
+  },
+  {
+    "serial": 17,
+    "name": "Jane Smith",
+    "roll": "LCS20201017",
+    "mobile": "123456870",
+    "time": "04:22 AM",
+    "entryExit": "Entry",
+    "status": "Rejected"
+  },
+  {
+    "serial": 18,
+    "name": "Alice Johnson",
+    "roll": "LCS20201018",
+    "mobile": "123457408",
+    "time": "06:39 AM",
+    "entryExit": "Exit",
+    "status": "Approved"
+  },
+  {
+    "serial": 19,
+    "name": "John Doe",
+    "roll": "LCS20201019",
+    "mobile": "123452805",
+    "time": "11:50 AM",
+    "entryExit": "Exit",
+    "status": "Approved"
+  },
+  {
+    "serial": 20,
+    "name": "Alice Johnson",
+    "roll": "LCS20201020",
+    "mobile": "123454522",
+    "time": "12:52 AM",
+    "entryExit": "Exit",
+    "status": "Rejected"
+  }
+];
+
 function fetchLogData() {
   // Simulated data fetching. Replace this with actual data fetching logic.
-  return [{
-    serial: 1,
-    name: "Emma Davis",
-    roll: 1001,
-    mobile: "123456597",
-    time: "02:13 PM",
-    entryExit: "Entry",
-    status: "Rejected",
-  }];
+  return data;
 }
 
 function updateTable() {
@@ -94,3 +269,16 @@ function applyFilters() {
         : "none";
   });
 }
+
+function updateTime() {
+  const now = new Date();
+  const dateString = now.toLocaleDateString();
+  const timeString = now.toLocaleTimeString(); // Adjust format as needed
+  document.querySelector('.time').textContent = dateString + " " + timeString;
+}
+
+// Update time every second
+setInterval(updateTime, 1000);
+
+// Initialize with current time
+updateTime();

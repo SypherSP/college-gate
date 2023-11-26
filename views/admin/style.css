@@ -1,24 +1,134 @@
 body {
+  margin: 0px;
     font-family: Arial, sans-serif;
   }
+  
   .scrollable-table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 300px;
     overflow: auto;
-    border-collapse: collapse;
   }
-  th,
-  td {
+  
+  #log-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #log-table thead,
+  #log-table tbody {
+    display: block;
+  }
+
+  #log-table thead {
+    overflow: hidden;
+  }
+  
+  #log-table tbody {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #log-table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+  }
+  
+  #log-table th,
+  #log-table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
   }
-  th {
-    background-color: #f2f2f2;
+  
+  #log-table th,td {
+    min-width: 100px; /* Adjust as needed */
   }
+  
   tr:nth-child(even) {
     background-color: #f9f9f9;
   }
+  
+
   .filter-input {
     margin: 10px 0;
   }
+
+  #header{
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    justify-content: right;
+    align-items: center;
+    padding-inline: 20px;
+    margin-bottom: 50px;
+    position: relative;
+    text-align: center;
+    background-color:cadetblue;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-links{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-link{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.btn-link-2{
+    margin-right: 6px;
+}
+
+
+.time{
+    align-items: right;
+    font-size: small;
+}
+
+.filter-input,
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-input{
+  flex-direction: row;
+  margin: 16px;
+  padding: 18px;
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+
+input {
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.filter-input button {
+  padding: 6px 12px;
+}
+
+select {
+  padding: 6px;
+}
